@@ -19,7 +19,7 @@ int main()
     }
     else if (utvar_id == 2)
     {
-        utvar = std::make_shared<Kyticka>(0.0,0.0,6.0);
+        utvar = std::make_shared<Kyticka>(0.0,0.0,7.0);
     }
     //else if (utvar_id == 3) {
     //    utvar = std::make_shared<Srdce>(0.0,0.0);
