@@ -74,12 +74,11 @@ void DatabazovySystem::seradUzivatele()
 void DatabazovySystem::ulozDoSouboru(std::string nazevSouboru)
 {
     std::ofstream vystupniSouboor(nazevSouboru);
-    //writeToFile << domLen << std::endl;
     
 
     for (int i = 0; i < uzivatele.size(); i++)
     {
-        vystupniSouboor << uzivatele[i].prijmeni << ", " << uzivatele[i].jmeno << ", " << uzivatele[i].vyska << ", " << uzivatele[i].vek << ", " << uzivatele[i].vzdelani << std::endl;
+        vystupniSouboor << uzivatele[i].prijmeni << ", " << uzivatele[i].jmeno << ", " << uzivatele[i].vyska << ", " << uzivatele[i].vek << ", " << uzivatele[i].getVzdelani() << std::endl;
         
     }
     

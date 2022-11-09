@@ -86,7 +86,7 @@ std::string Uzivatel::getVzdelani()
     }
     else if (vzdelani == vs)
     {
-        return "vyskoskolske";
+        return "vysokoskolske";
     }
     return "nezadano";
 }
