@@ -15,9 +15,9 @@ Mesh::Mesh()
     std::vector<BoundaryNode> boundaryNodeList;
 }
 
-Mesh::Mesh(PolygonBoundary boundary)
+Mesh::Mesh(PolygonBoundary boundary, double dxx)
 {
-    dx = 0.2;
+    dx = dxx;
     dy = dx;
 
     std::vector<std::vector<short>> nodeList;

@@ -13,10 +13,10 @@ class Mesh
             unsigned char boundaryConditionType;
             float param1;
             float param2;
-        };        
+        };
 
         Mesh();
-        Mesh(PolygonBoundary boundary);
+        Mesh(PolygonBoundary boundary, double dxx);
         virtual ~Mesh();
 
         std::vector<std::vector<short>> nodeList;
