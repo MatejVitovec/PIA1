@@ -59,8 +59,8 @@ int main()
 
     
 
-    // debug
-    std::ofstream zapisDoSouboru("vystup.txt");    
+    // debug, zde je mozne vypsat hodnoty orientace a typ uzlu
+    /*std::ofstream zapisDoSouboru("vystup.txt");    
     for (int j = 0; j < mesh1.nodeList.size(); j++)
     {
         for (int i = 0; i < mesh1.nodeList[j].size(); i++)
@@ -107,7 +107,7 @@ int main()
             zapisDoSouboru << vystup << " ";
         }
         zapisDoSouboru << std::endl;
-    }
+    }*/
     
     return 0;
 }
