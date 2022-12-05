@@ -45,8 +45,8 @@ void Mesh::create(PolygonBoundary boundary)
         }
     }
 
-    nodeSumX = (((float)xMax)/dx) + 1;
-    nodeSumY = (((float)yMax)/dy) + 1;
+    nodeSumX = (((double)xMax)/dx) + 1;
+    nodeSumY = (((double)yMax)/dy) + 1;
 
     nodeList.push_back(std::vector<short>());
 
@@ -86,8 +86,6 @@ void Mesh::create(PolygonBoundary boundary)
         nodeList.push_back(std::vector<short>());
     }
     nodeList.pop_back(); 
-
-    nodeList.pop_back();
 
     removeCornerNodes();
 

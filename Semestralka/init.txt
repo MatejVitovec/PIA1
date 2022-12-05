@@ -1,0 +1,9 @@
+# lambda, rho, cp, dx, dt, T0, tEnd, pltEvery
+50
+7850
+0.460
+0.1
+0.005
+20.3
+30
+20

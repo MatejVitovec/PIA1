@@ -6,7 +6,7 @@
 
 InputFileParser::InputFileParser()
 {
-    std::vector<std::vector<int>> v;
+    std::vector<std::vector<double>> v;
     dataArray = v;
 }
 
@@ -31,7 +31,7 @@ void InputFileParser::parse()
     int lineIdx = 0;
     bool lastSpace = false;
     std::string aux = "";
-    dataArray.push_back(std::vector<int>());
+    dataArray.push_back(std::vector<double>());
 
     for (int j = 0; j < dataIn.size(); j++)
     {
@@ -46,18 +46,18 @@ void InputFileParser::parse()
             {
                 if(!lastSpace)
                 {
-                    int pomocna = stoi(aux);
+                    double pomocna = stod(aux);
 
-                    dataArray[lineIdx].push_back(std::stoi(aux));
+                    dataArray[lineIdx].push_back(std::stod(aux));
                     aux = "";
                     lastSpace = true;
                 }
             }
             else if(dataIn[j][i] == 13)
             {
-                dataArray[lineIdx].push_back(std::stoi(aux));
+                dataArray[lineIdx].push_back(std::stod(aux));
                 aux = "";
-                dataArray.push_back(std::vector<int>());
+                dataArray.push_back(std::vector<double>());
                 lineIdx++;
             }
             else
@@ -69,10 +69,10 @@ void InputFileParser::parse()
 
         }
     }
-    dataArray[lineIdx].push_back(std::stoi(aux));
+    dataArray[lineIdx].push_back(std::stod(aux));
 }
 
-std::vector<std::vector<int>> InputFileParser::getData()
+std::vector<std::vector<double>> InputFileParser::getData()
 {
     return dataArray;
 }

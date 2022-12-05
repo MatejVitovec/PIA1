@@ -12,8 +12,8 @@ class Mesh
         {
             nodeOrientationType orientation;
             unsigned char boundaryConditionType;
-            float param1;
-            float param2;
+            double param1;
+            double param2;
         };
 
         Mesh();
@@ -26,8 +26,8 @@ class Mesh
         void create(PolygonBoundary boundary);
 
     private:
-        float dx;
-        float dy;
+        double dx;
+        double dy;
         int nodeSumX;
         int nodeSumY;
 

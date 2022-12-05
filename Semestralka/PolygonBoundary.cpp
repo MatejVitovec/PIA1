@@ -10,14 +10,14 @@ PolygonBoundary::PolygonBoundary()
     std::vector<BoundarySegment> boundaryEndPoints;
 }
 
-PolygonBoundary::PolygonBoundary(std::vector<std::vector<int>> data)
+PolygonBoundary::PolygonBoundary(std::vector<std::vector<double>> data)
 {
     std::vector<BoundarySegment> boundaryEndPoints;
 
     PolygonBoundary::load(data);
 }
 
-void PolygonBoundary::load(std::vector<std::vector<int>> data)
+void PolygonBoundary::load(std::vector<std::vector<double>> data)
 {
     for (int j = 1; j < data.size(); j++)
     {

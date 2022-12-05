@@ -9,11 +9,11 @@ class InputFileParser
 
         void readFile(std::string path);
         void parse();
-        std::vector<std::vector<int>> getData();
+        std::vector<std::vector<double>> getData();
 
     private:
         std::vector<std::string> dataIn;
-        std::vector<std::vector<int>> dataArray;
+        std::vector<std::vector<double>> dataArray;
         
 };
 

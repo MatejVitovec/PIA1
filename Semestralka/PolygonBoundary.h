@@ -15,15 +15,15 @@ class PolygonBoundary
         {
             Point endPoint;
             unsigned char boundaryType;
-            float param1;
-            float param2;
+            double param1;
+            double param2;
         };
     
         PolygonBoundary();
-        PolygonBoundary(std::vector<std::vector<int>> data);
+        PolygonBoundary(std::vector<std::vector<double>> data);
         virtual ~PolygonBoundary();
 
-        void load(std::vector<std::vector<int>> data);
+        void load(std::vector<std::vector<double>> data);
 
         std::vector<BoundarySegment> boundaryEndPoints;
 };

@@ -6,19 +6,16 @@
 #include <iostream>
 #include "Solver.h"
 
-
-
 class ExportVTK
 {
-public:
+    public:
+        Solver temp;
 
-    Solver temp;
+        ExportVTK();
+        void Out(Solver temp_in, int s, int plot_every, std::string outDirName);
+        ~ExportVTK();
 
-    ExportVTK();
-    void Out(Solver temp_in, int s, int plot_every);
-    ~ExportVTK();
-
-private:
+    private:
 
 };
 

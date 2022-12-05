@@ -10,12 +10,12 @@ ExportVTK::ExportVTK()
     
 }
 
-void ExportVTK::Out(Solver temp_in, int s, int plot_every)
+void ExportVTK::Out(Solver temp_in, int s, int plot_every, std::string outDirName)
 {
     temp = temp_in;
 
     std::string step =std::to_string(s/plot_every);
-    std::ofstream out_file("Poasson."+step+".vtk");
+    std::ofstream out_file(outDirName+"/heatResult."+step+".vtk");
 
     out_file << "# vtk DataFile Version 2.0\n" ;
     out_file << "LBE two cylinders\n" ;
