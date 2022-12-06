@@ -92,6 +92,31 @@ void Mesh::create(PolygonBoundary boundary)
     setBoundaryNodesOrientation();
 }
 
+void Mesh::merge(Mesh mesh2)
+{
+    int bndId = boundaryNodeList.size();
+
+    for (int j = 0; j < nodeSumY; j++)
+    {
+        for (int i = 0; i < nodeSumX; i++)
+        {
+            if(nodeList[j][i] == 1 && mesh2.nodeList[j][i] == 1)
+            {
+                nodeList[j][i] = 0;
+            }
+            else if(mesh2.nodeList[j][i] > 1)
+            {
+                nodeList[j].push_back(bndId);
+                BoundaryNode auxBoundaryNode = mesh2.boundaryNodeList[mesh2.nodeList[j][i]];
+                boundaryNodeList.push_back(auxBoundaryNode);
+
+                bndId++;
+            }
+        }
+        
+    }
+}
+
 bool Mesh::isPointInside(PolygonBoundary boundary, Point point)
 {
     double t = 0;
@@ -101,10 +126,10 @@ bool Mesh::isPointInside(PolygonBoundary boundary, Point point)
 
     double x1 = point.x;
     double y1 = point.y;
-    double x2 = 99;
+    double x2 = 999;
     double y2 = y1;
     double x22 = x1;
-    double y22 = 99;
+    double y22 = 999;
     double x3, x4, y3, y4;
     
     for (int i = 0; i < boundary.boundaryEndPoints.size(); i++)
@@ -131,7 +156,7 @@ bool Mesh::isPointInside(PolygonBoundary boundary, Point point)
         {
             t = 2;
             u = 2;
-        }        
+        }
         if (0 <= t && t <= 1 && 0 <= u && u <= 1)
         {
             cnt1++;
@@ -146,18 +171,20 @@ bool Mesh::isPointInside(PolygonBoundary boundary, Point point)
         {
             t = 2;
             u = 2;
-        }        
+        }
         if (0 <= t && t <= 1 && 0 <= u && u <= 1)
         {
             cnt2++;
         }
     }
     
-    if ((cnt1 % 2) != 0 || (cnt2 % 2) != 0 )
+    bool rtn = false;
+    if((cnt1 % 2) != 0 || (cnt2 % 2) != 0)
     {
-        return true;
+        rtn = true;
     }
-    return false;
+
+    return rtn;
 }
 
 bool Mesh::isPointOnBoundary(PolygonBoundary boundary, Point point, PolygonBoundary::BoundarySegment& boundarySegment)

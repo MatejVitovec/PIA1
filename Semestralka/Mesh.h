@@ -24,6 +24,7 @@ class Mesh
         std::vector<BoundaryNode> boundaryNodeList;
 
         void create(PolygonBoundary boundary);
+        void merge(Mesh mesh2);
 
     private:
         double dx;
