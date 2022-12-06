@@ -12,7 +12,7 @@
 
 int main(int argc, char** argv)
 {
-    std::string inputGeometryName = "geom.txt";
+    std::string inputGeometryName = "geom3.txt";
     std::string inputInitName = "init.txt";
     std::string outputDirName = "results";
 
@@ -61,6 +61,8 @@ int main(int argc, char** argv)
             Exp.Out(Temperature, iteration, plotEvery, outputDirName);
         }
     }
+
+    std::cout << "Výpočet proběhl úspěšně!" << std::endl;
 
     return 0;
 }
